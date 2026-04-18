@@ -9,7 +9,7 @@ interface User {
 }
 
 const UserForm: React.FC = () => {
-    const [name, setName] = useState<string>('');
+    const [name, setName] = useState<string>('Towsif');
     const [email, setEmail] = useState<string>('');
     const [acceptedTerms, setAcceptedTerms] = useState<boolean>(false);
     const [users, setUsers] = useState<User[]>([]);
@@ -68,6 +68,15 @@ const UserForm: React.FC = () => {
 
     return (
         <div className="min-h-screen bg-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+            <h1>Testing React h1</h1>
+            <h2>Testing React h2</h2>
+            <p>Enter the form data</p>
+            <img src="https://image.jpg" alt="Person" />
+            <div title='open'>open</div>
+            <div data-testId='paragraph'>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, possimus consequuntur suscipit doloremque a ex qui rerum maxime libero? Alias cum assumenda dolor corrupti culpa eius quibusdam corporis illo ipsum cumque molestiae nam voluptatem enim laudantium est facere, perferendis aliquam dolorem eum? Distinctio numquam quisquam magni quibusdam odit voluptatem doloribus.</p>
+            </div>
+
             <div className="max-w-4xl mx-auto">
                 <div className="bg-white rounded-lg shadow-md p-6 mb-8">
                     <h2 className="text-2xl font-bold text-gray-900 mb-6">User Registration Form</h2>
