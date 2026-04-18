@@ -21,6 +21,10 @@ it('should render the user component correctly', () => {
     const headingElement = screen.getByRole('heading', {
         name: 'Testing React h2',
         level: 2
+    });
+
+    const button = screen.queryByRole('button', {
+        name: 'Submit'
     })
 
     expect(element).toBeInTheDocument();
@@ -31,5 +35,6 @@ it('should render the user component correctly', () => {
     expect(element6).toBeInTheDocument();
     expect(element7).toBeInTheDocument();
     expect(element8).toBeInTheDocument();
+    expect(button).not.toBeInTheDocument();
     expect(headingElement).toBeInTheDocument();
 })

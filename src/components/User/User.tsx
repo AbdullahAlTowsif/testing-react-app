@@ -13,6 +13,9 @@ const UserForm: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [acceptedTerms, setAcceptedTerms] = useState<boolean>(false);
     const [users, setUsers] = useState<User[]>([]);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [editMode, setEditMode] = useState(false);
+
     const [errors, setErrors] = useState<{
         name?: string;
         email?: string;
@@ -96,8 +99,8 @@ const UserForm: React.FC = () => {
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.name
-                                        ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
-                                        : 'border-gray-300 focus:border-blue-500'
+                                    ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
+                                    : 'border-gray-300 focus:border-blue-500'
                                     }`}
                                 placeholder="John Doe"
                             />
@@ -120,8 +123,8 @@ const UserForm: React.FC = () => {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${errors.email
-                                        ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
-                                        : 'border-gray-300 focus:border-blue-500'
+                                    ? 'border-red-300 focus:border-red-500 focus:ring-red-500'
+                                    : 'border-gray-300 focus:border-blue-500'
                                     }`}
                                 placeholder="john@example.com"
                             />
@@ -154,12 +157,24 @@ const UserForm: React.FC = () => {
                         </div>
 
                         {/* Submit Button */}
-                        <button
-                            type="submit"
-                            className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 font-medium"
-                        >
-                            Submit
-                        </button>
+                        {
+                            editMode ? (
+                                <button
+                                    type="submit"
+                                    className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 font-medium"
+                                >
+                                    Submit
+                                </button>
+                            ) : (
+                                <button
+                                    type="submit"
+                                    className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors duration-200 font-medium"
+                                >
+                                    Edit
+                                </button>
+                            )
+                        }
+
                     </form>
                 </div>
 
@@ -181,8 +196,8 @@ const UserForm: React.FC = () => {
                                             <p className="text-sm text-gray-600">{user.email}</p>
                                             <div className="flex items-center space-x-2 text-xs text-gray-500">
                                                 <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${user.acceptedTerms
-                                                        ? 'bg-green-100 text-green-800'
-                                                        : 'bg-red-100 text-red-800'
+                                                    ? 'bg-green-100 text-green-800'
+                                                    : 'bg-red-100 text-red-800'
                                                     }`}>
                                                     {user.acceptedTerms ? '✓ Terms Accepted' : '✗ Terms Not Accepted'}
                                                 </span>

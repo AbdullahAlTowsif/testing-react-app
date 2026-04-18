@@ -1,5 +1,8 @@
 // import PrimaryButton from "./components/PrimaryButton"
+import FruitList from "./components/FruitList/FruitList";
 import UserForm from "./components/User/User";
+// eslint-disable-next-line react-refresh/only-export-components
+export const fruitList = ["Apple", "Banana", "Pineaple", "Jackfruit"];
 
 function App() {
 
@@ -10,6 +13,7 @@ function App() {
         {/* <PrimaryButton action="Update" />
         <PrimaryButton action="Delete" /> */}
         <UserForm />
+        <FruitList fruits={fruitList} />
       </div>
     </>
   )
