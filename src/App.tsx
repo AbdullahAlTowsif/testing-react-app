@@ -1,7 +1,8 @@
 // import PrimaryButton from "./components/PrimaryButton"
 // import FruitList from "./components/FruitList/FruitList";
 // import UserForm from "./components/User/User";
-import Form from "./components/Form/Form";
+import Counter from "./components/Counter/Counter";
+// import Form from "./components/Form/Form";
 // import UserEvent from "./components/UserEvent/UserEvent";
 // import UserTable from "./components/UserTable/UserTable";
 // eslint-disable-next-line react-refresh/only-export-components
@@ -26,7 +27,8 @@ function App() {
         {/* <FruitList fruits={fruitList} /> */}
         {/* <UserTable users={users} /> */}
         {/* <UserEvent /> */}
-        <Form onSubmit={(data) => console.log(data)} />
+        {/* <Form onSubmit={(data) => console.log(data)} /> */}
+        <Counter />
       </div>
     </>
   )
