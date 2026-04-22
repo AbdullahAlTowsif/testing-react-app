@@ -1,7 +1,8 @@
 // import PrimaryButton from "./components/PrimaryButton"
 // import FruitList from "./components/FruitList/FruitList";
 // import UserForm from "./components/User/User";
-import UserTable from "./components/UserTable/UserTable";
+import UserEvent from "./components/UserEvent/UserEvent";
+// import UserTable from "./components/UserTable/UserTable";
 // eslint-disable-next-line react-refresh/only-export-components
 export const fruitList = ["Apple", "Banana", "Pineaple", "Jackfruit"];
 
@@ -22,7 +23,8 @@ function App() {
         <PrimaryButton action="Delete" /> */}
         {/* <UserForm /> */}
         {/* <FruitList fruits={fruitList} /> */}
-        <UserTable users={users} />
+        {/* <UserTable users={users} /> */}
+        <UserEvent />
       </div>
     </>
   )
