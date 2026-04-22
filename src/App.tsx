@@ -1,16 +1,17 @@
 // import PrimaryButton from "./components/PrimaryButton"
 // import FruitList from "./components/FruitList/FruitList";
 // import UserForm from "./components/User/User";
-import UserEvent from "./components/UserEvent/UserEvent";
+import Form from "./components/Form/Form";
+// import UserEvent from "./components/UserEvent/UserEvent";
 // import UserTable from "./components/UserTable/UserTable";
 // eslint-disable-next-line react-refresh/only-export-components
 export const fruitList = ["Apple", "Banana", "Pineaple", "Jackfruit"];
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const users = [
-  {id: 1, name: 'John', age: 32},
-  {id: 2, name: 'Jane', age: 25},
-  {id: 3, name: 'Bob', age: 43},
+  { id: 1, name: 'John', age: 32 },
+  { id: 2, name: 'Jane', age: 25 },
+  { id: 3, name: 'Bob', age: 43 },
 ]
 
 function App() {
@@ -24,7 +25,8 @@ function App() {
         {/* <UserForm /> */}
         {/* <FruitList fruits={fruitList} /> */}
         {/* <UserTable users={users} /> */}
-        <UserEvent />
+        {/* <UserEvent /> */}
+        <Form onSubmit={(data) => console.log(data)} />
       </div>
     </>
   )
